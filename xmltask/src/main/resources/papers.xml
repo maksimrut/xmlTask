@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<papers xmlns:xsi="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.example.org/papers"
+	xsi:schemaLocation=http://www.example.org/papers papers.xsd">
+
+	<paper id="001">
+		<title>Glos Znad Niemna</title>
+		<language>Polish</language>
+		<date>2005-03</date>
+		<colored>false</colored>
+		<price>2</price>
+	</paper>
+
+	<journal id="002">
+		<title>Technika</title>
+		<language>Polish</language>
+		<date>2005-03</date>
+		<colored>false</colored>
+		<price>5</price>
+		<points>120</points>
+		<scopus>true</scopus>
+	</journal>
+
+	<catalogue id="003">
+		<title>Technika</title>
+		<language>Polish</language>
+		<date>2005-03</date>
+		<colored>false</colored>
+		<price>0</price>
+		<volume>150</volume>
+	</catalogue>
+
+	<paper id="004">
+		<title>Novosti</title>
+		<language>Russian</language>
+		<date>2005-04</date>
+		<colored>false</colored>
+		<price>2</price>
+	</paper>
+
+	<journal id="005">
+		<title>Technika</title>
+		<language>Russian</language>
+		<date>2005-03</date>
+		<colored>false</colored>
+		<price>5</price>
+		<points>20</points>
+		<scopus>true</scopus>
+	</journal>
+
+	<catalogue id="006">
+		<title>VsiaTechnika</title>
+		<language>Russian</language>
+		<date>2005-03</date>
+		<colored>false</colored>
+		<price>0</price>
+		<volume>180</volume>
+	</catalogue>
+
+	<paper id="007">
+		<title>NashaNiva</title>
+		<language>Belarusian</language>
+		<date>2005-05</date>
+		<colored>false</colored>
+		<price>2</price>
+	</paper>
+
+	<journal id="008">
+		<title>Technika</title>
+		<language>Belarusian</language>
+		<date>2005-05</date>
+		<colored>false</colored>
+		<price>5</price>
+		<points>120</points>
+		<scopus>true</scopus>
+	</journal>
+
+	<catalogue id="009">
+		<title>NashaTechnika</title>
+		<language>Belarusian</language>
+		<date>2005-05</date>
+		<colored>false</colored>
+		<price>0</price>
+		<volume>170</volume>
+	</catalogue>
+
+	<paper id="010">
+		<title>Tegilim</title>
+		<language>Hebrew</language>
+		<date>2005-07</date>
+		<colored>false</colored>
+		<price>2</price>
+	</paper>
+
+	<journal id="011">
+		<title>Bereshit</title>
+		<language>Hebrew</language>
+		<date>2005-07</date>
+		<colored>true</colored>
+		<price>5</price>
+		<points>180</points>
+		<scopus>true</scopus>
+	</journal>
+
+	<catalogue id="012">
+		<title>Alef</title>
+		<language>English</language>
+		<date>2005-07</date>
+		<colored>false</colored>
+		<price>0</price>
+		<volume>150</volume>
+	</catalogue>
+
+	<paper id="013">
+		<title>Times</title>
+		<language>English</language>
+		<date>2005-09</date>
+		<colored>false</colored>
+		<price>2</price>
+	</paper>
+
+	<journal id="014">
+		<title>Energy</title>
+		<language>English</language>
+		<date>2005-09</date>
+		<colored>true</colored>
+		<price>8</price>
+		<points>120</points>
+		<scopus>true</scopus>
+	</journal>
+
+	<journal id="015">
+		<title>Renewables</title>
+		<language>English</language>
+		<date>2005-09</date>
+		<colored>true</colored>
+		<price>7</price>
+		<points>150</points>
+		<scopus>false</scopus>
+	</journal>
+
+	<catalogue id="016">
+		<title>Technics</title>
+		<language>English</language>
+		<date>2005-09</date>
+		<colored>false</colored>
+		<price>0</price>
+		<volume>150</volume>
+	</catalogue>
+</papers>
