@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<papers xmlns:xsi="http://www.w3.org/2001/XMLSchema"
+<papers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.example.org/papers"
-	xsi:schemaLocation=http://www.example.org/papers papers.xsd">
+	xsi:schemaLocation="http://www.example.org/papers papers.xsd">
 
-	<paper id="001">
-		<title>Glos Znad Niemna</title>
-		<language>Polish</language>
-		<date>2005-03</date>
-		<colored>false</colored>
-		<price>2</price>
-	</paper>
-
-	<journal id="002">
+	<journal id="p2">
 		<title>Technika</title>
 		<language>Polish</language>
 		<date>2005-03</date>
@@ -21,7 +13,7 @@
 		<scopus>true</scopus>
 	</journal>
 
-	<catalogue id="003">
+	<catalogue id="p3" website="qwe.rty">
 		<title>Technika</title>
 		<language>Polish</language>
 		<date>2005-03</date>
@@ -30,15 +22,7 @@
 		<volume>150</volume>
 	</catalogue>
 
-	<paper id="004">
-		<title>Novosti</title>
-		<language>Russian</language>
-		<date>2005-04</date>
-		<colored>false</colored>
-		<price>2</price>
-	</paper>
-
-	<journal id="005">
+	<journal website="qwe.rty" id="p5">
 		<title>Technika</title>
 		<language>Russian</language>
 		<date>2005-03</date>
@@ -48,7 +32,7 @@
 		<scopus>true</scopus>
 	</journal>
 
-	<catalogue id="006">
+	<catalogue id="p6">
 		<title>VsiaTechnika</title>
 		<language>Russian</language>
 		<date>2005-03</date>
@@ -57,15 +41,7 @@
 		<volume>180</volume>
 	</catalogue>
 
-	<paper id="007">
-		<title>NashaNiva</title>
-		<language>Belarusian</language>
-		<date>2005-05</date>
-		<colored>false</colored>
-		<price>2</price>
-	</paper>
-
-	<journal id="008">
+	<journal id="p8">
 		<title>Technika</title>
 		<language>Belarusian</language>
 		<date>2005-05</date>
@@ -75,7 +51,7 @@
 		<scopus>true</scopus>
 	</journal>
 
-	<catalogue id="009">
+	<catalogue id="p9">
 		<title>NashaTechnika</title>
 		<language>Belarusian</language>
 		<date>2005-05</date>
@@ -84,15 +60,7 @@
 		<volume>170</volume>
 	</catalogue>
 
-	<paper id="010">
-		<title>Tegilim</title>
-		<language>Hebrew</language>
-		<date>2005-07</date>
-		<colored>false</colored>
-		<price>2</price>
-	</paper>
-
-	<journal id="011">
+	<journal id="p11">
 		<title>Bereshit</title>
 		<language>Hebrew</language>
 		<date>2005-07</date>
@@ -102,7 +70,7 @@
 		<scopus>true</scopus>
 	</journal>
 
-	<catalogue id="012">
+	<catalogue id="p12">
 		<title>Alef</title>
 		<language>English</language>
 		<date>2005-07</date>
@@ -111,15 +79,7 @@
 		<volume>150</volume>
 	</catalogue>
 
-	<paper id="013">
-		<title>Times</title>
-		<language>English</language>
-		<date>2005-09</date>
-		<colored>false</colored>
-		<price>2</price>
-	</paper>
-
-	<journal id="014">
+	<journal id="p14">
 		<title>Energy</title>
 		<language>English</language>
 		<date>2005-09</date>
@@ -129,7 +89,7 @@
 		<scopus>true</scopus>
 	</journal>
 
-	<journal id="015">
+	<journal id="p15">
 		<title>Renewables</title>
 		<language>English</language>
 		<date>2005-09</date>
@@ -139,7 +99,7 @@
 		<scopus>false</scopus>
 	</journal>
 
-	<catalogue id="016">
+	<catalogue id="p16">
 		<title>Technics</title>
 		<language>English</language>
 		<date>2005-09</date>
@@ -147,4 +107,52 @@
 		<price>0</price>
 		<volume>150</volume>
 	</catalogue>
+
+	<journal id="p13" website="developers.com">
+		<title>Developers</title>
+		<language>English</language>
+		<date>2010-09</date>
+		<colored>true</colored>
+		<price>10</price>
+		<points>100</points>
+		<scopus>true</scopus>
+	</journal>
+
+	<catalogue id="p10">
+		<title>Tegilim</title>
+		<language>Hebrew</language>
+		<date>2015-10</date>
+		<colored>false</colored>
+		<price>10</price>
+		<volume>200</volume>
+	</catalogue>
+
+	<journal id="p7">
+		<title>Article</title>
+		<language>Polish</language>
+		<date>2007-09</date>
+		<colored>false</colored>
+		<price>7</price>
+		<points>0</points>
+		<scopus>false</scopus>
+	</journal>
+
+	<catalogue id="p4">
+		<title>Tech</title>
+		<language>English</language>
+		<date>2020-09</date>
+		<colored>false</colored>
+		<price>20</price>
+		<volume>400</volume>
+	</catalogue>
+
+	<journal id="p1">
+		<title>Uperad</title>
+		<language>Belarusian</language>
+		<date>2020-09</date>
+		<colored>true</colored>
+		<price>7</price>
+		<points>200</points>
+		<scopus>true</scopus>
+	</journal>
 </papers>

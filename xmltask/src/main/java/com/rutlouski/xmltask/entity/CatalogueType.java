@@ -2,7 +2,7 @@ package com.rutlouski.xmltask.entity;
 
 import java.time.YearMonth;
 
-public class CatalogueType extends PaperType {
+public class CatalogueType extends Paper {
 	
 	private int volume;
 
@@ -10,11 +10,19 @@ public class CatalogueType extends PaperType {
 		super();
 	}
 
-	public CatalogueType(int id, String website, PaperLanguage language, YearMonth date, 
+	public CatalogueType(String id, String website, String title, PaperLanguage language, YearMonth date, 
 			boolean colored, int price, int volume) {
 		
-		super(id, website, language, date, colored, price);
+		super(id, website, title, language, date, colored, price);
 		this.volume = volume;
+	}
+	
+	public CatalogueType(String id, String website) {
+		super(id, website);
+	}
+	
+	public CatalogueType(String id) {
+		super(id);
 	}
 
 	public int getVolume() {
@@ -48,9 +56,14 @@ public class CatalogueType extends PaperType {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("CatalogueType [volume=");
-		builder.append(volume);
-		builder.append("]");
+		builder.append("CatalogueType [id=").append(this.getId())
+		.append(", website=").append(this.getWebsite())
+		.append(", title=").append(this.getTitle())
+		.append(", language=").append(this.getLanguage())
+		.append(", date=").append(this.getDate())
+		.append(", colored=").append(this.isColored())
+		.append(", price=").append(this.getPrice())
+		.append(", volume=").append(volume).append("]");
 		return builder.toString();
 	}
 }

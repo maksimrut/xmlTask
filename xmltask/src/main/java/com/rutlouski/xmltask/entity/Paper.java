@@ -2,37 +2,51 @@ package com.rutlouski.xmltask.entity;
 
 import java.time.YearMonth;
 
-public abstract class PaperType {
+public class Paper {
 	
 	public static final String DEFAULT_WEBSITE = "http://www.example.org";
 	
-	private int id;
+	private String id;
 	private String website;
+	private String title;
 	private PaperLanguage language;
 	private YearMonth date;
 	private boolean colored;
 	private int price;
 	
-	protected PaperType() {
+	public Paper() {
 		website = DEFAULT_WEBSITE;
-		language = language.RUSSIAN;
+		language = PaperLanguage.RUSSIAN;
 	}
 
-	protected PaperType(int id, String website, PaperLanguage language, YearMonth date, boolean colored, int price) {
-		super();
+	public Paper(String id, String website, String title, PaperLanguage language, YearMonth date, boolean colored, int price) {
 		this.id = id;
 		this.website = website;
+		this.title = title;
 		this.language = language;
 		this.date = date;
 		this.colored = colored;
 		this.price = price;
 	}
+	
+	public Paper(String id, String website) {
+		this.id = id;
+		this.website = website;
+		language = PaperLanguage.RUSSIAN;
+		website = DEFAULT_WEBSITE;
+	}
+	
+	public Paper(String id) {
+		this.id = id;
+		language = PaperLanguage.RUSSIAN;
+		website = DEFAULT_WEBSITE;
+	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -43,7 +57,15 @@ public abstract class PaperType {
 	public void setWebsite(String website) {
 		this.website = website;
 	}
+	
+	public String getTitle() {
+		return title;
+	}
 
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
 	public PaperLanguage getLanguage() {
 		return language;
 	}
@@ -82,10 +104,11 @@ public abstract class PaperType {
 		int result = 1;
 		result = prime * result + (colored ? 1231 : 1237);
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((language == null) ? 0 : language.hashCode());
 		result = prime * result + price;
 		result = prime * result + ((website == null) ? 0 : website.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
 
@@ -95,10 +118,10 @@ public abstract class PaperType {
 			return true;
 		if (obj == null || getClass() != obj.getClass())
 			return false;
-		PaperType other = (PaperType) obj;
-		return colored == other.colored && (id == other.id) 
-				&& (language == other.language) && (price == other.price)
-				&& date.equals(other.date) && website.equals(other.website);
+		Paper other = (Paper) obj;
+		return colored == other.colored && id.equals(other.id) && (language == other.language) 
+				&& (price == other.price) && date.equals(other.date)
+				&& website.equals(other.website) && title.equals(other.title);
 	}
 
 	@Override
@@ -106,6 +129,7 @@ public abstract class PaperType {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Paper [id=").append(id)
 		.append(", website=").append(website)
+		.append(", title=").append(title)
 		.append(", language=").append(language)
 		.append(", date=").append(date)
 		.append(", colored=").append(colored)

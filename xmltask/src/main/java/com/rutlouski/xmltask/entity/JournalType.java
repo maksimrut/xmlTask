@@ -2,7 +2,7 @@ package com.rutlouski.xmltask.entity;
 
 import java.time.YearMonth;
 
-public class JournalType extends PaperType {
+public class JournalType extends Paper {
 	
 	private int points;
 	private boolean scopus;
@@ -11,14 +11,22 @@ public class JournalType extends PaperType {
 		super();
 	}
 	
-	public JournalType(int id, String website, PaperLanguage language, YearMonth date, 
+	public JournalType(String id, String website, String title, PaperLanguage language, YearMonth date, 
 			boolean colored, int price, int points, boolean scopus) {
 		
-		super(id, website, language, date, colored, price);
+		super(id, website, title, language, date, colored, price);
 		this.points = points;
 		this.scopus = scopus;
 	}
-
+	
+	public JournalType(String id, String website) {
+		super(id, website);
+	}
+	
+	public JournalType(String id) {
+		super(id);
+	}
+	
 	public int getPoints() {
 		return points;
 	}
@@ -59,7 +67,14 @@ public class JournalType extends PaperType {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("JournalType [points=").append(points)
+		builder.append("JournalType [id=").append(this.getId())
+		.append(", website=").append(this.getWebsite())
+		.append(", title=").append(this.getTitle())
+		.append(", language=").append(this.getLanguage())
+		.append(", date=").append(this.getDate())
+		.append(", colored=").append(this.isColored())
+		.append(", price=").append(this.getPrice())
+		.append(", points=").append(points)
 		.append(", scopus=").append(scopus).append("]");
 		return builder.toString();
 	}

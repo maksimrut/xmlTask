@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://www.example.org/papers"
-	xmlns:c="http://www.example.org/papers"
+	xmlns:tns="http://www.example.org/papers"
 	elementFormDefault="qualified">
 
 	<element name="papers">
 		<complexType>
 			<sequence>
-				<element ref="tns:paperType" maxOccurs="unbounded" />
+				<element ref="tns:paper" maxOccurs="unbounded" />
 			</sequence>
 		</complexType>	
 	</element>
@@ -17,7 +17,7 @@
 			<element name="title" type="string" />
 			<element name="language" type="tns:language" minOccurs="1" maxOccurs="unbounded" />
 			<element name="date" type="gYearMonth" />
-			<element name="colored" type="Boolean" />
+			<element name="colored" type="boolean" />
 			<element name="price" type="tns:price" />
 		</sequence>
 		<attribute name="id" type="tns:paperId" use="required" />
@@ -29,7 +29,7 @@
 			<extention base="tns:paperType">
 				<sequence>
 					<element name="points" type="unsignedInt" />
-					<element name="scopus" type="Boolean" />
+					<element name="scopus" type="boolean" />
 				</sequence>
 			</extention>
 		</complexContent>
@@ -67,6 +67,7 @@
 			<enumeration value="Hebrew" />
 		</restriction>
 	</simpleType>
+
 	
 	<element name="paper" type="tns:paperType" abstract="true" />
 	

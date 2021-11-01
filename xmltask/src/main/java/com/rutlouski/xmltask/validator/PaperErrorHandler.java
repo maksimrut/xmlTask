@@ -18,7 +18,7 @@ public class PaperErrorHandler implements ErrorHandler {
 	}
 	
 	public void fatalError(SAXParseException e) {
-		logger.warn(getLineColumnNumber(e) + "-" + e.getMessage());
+		logger.fatal(getLineColumnNumber(e) + "-" + e.getMessage());
 	}
 	
 	private String getLineColumnNumber(SAXParseException e) {

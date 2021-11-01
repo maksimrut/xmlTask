@@ -1,6 +1,7 @@
 package com.rutlouski.xmltask.entity;
 
 public enum PaperLanguage {
+	
 	RUSSIAN,
 	BELARUSIAN,
 	ENGLISH,

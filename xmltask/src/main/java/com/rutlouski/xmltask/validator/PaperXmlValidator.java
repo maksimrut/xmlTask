@@ -29,6 +29,8 @@ public class PaperXmlValidator {
 		SCHEMA_PATH = new File(resourse.getFile()).getAbsolutePath();
 	}
 	
+	private PaperXmlValidator() {}
+	
 	public static boolean validateXmlFile(String xmlPath) throws PaperException {
 		
 		String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
@@ -47,6 +49,7 @@ public class PaperXmlValidator {
 		} catch (IOException e) {
 			throw new PaperException("Cannot open file " + xmlPath, e);
 		}
+		logger.info(xmlPath + " validation is successful");
 		return true;
 	}
 }
