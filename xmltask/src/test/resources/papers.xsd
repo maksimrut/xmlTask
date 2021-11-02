@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/papers"
+	xmlns:tns="http://www.example.org/papers"
+	elementFormDefault="qualified">
+
+	<element name="papers">
+		<complexType>
+			<sequence>
+				<element ref="tns:paper" maxOccurs="unbounded" />
+			</sequence>
+		</complexType>	
+	</element>
+
+	<complexType name="paperType">
+		<sequence>
+			<element name="title" type="string" />
+			<element name="language" type="tns:language" minOccurs="1" maxOccurs="unbounded" />
+			<element name="date" type="gYearMonth" />
+			<element name="colored" type="boolean" />
+			<element name="price" type="tns:price" />
+		</sequence>
+		<attribute name="id" type="tns:paperId" use="required" />
+		<attribute name="website" type="string" use="optional" default="http://www.example.org" />
+	</complexType>
+
+	<complexType name="journalType">
+		<complexContent>
+			<extention base="tns:paperType">
+				<sequence>
+					<element name="points" type="unsignedInt" />
+					<element name="scopus" type="boolean" />
+				</sequence>
+			</extention>
+		</complexContent>
+	</complexType>
+
+	<complexType name="catalogueType">
+		<complexContent>
+			<extention base="tns:paperType">
+				<sequence>
+					<element name="volume" type="unsignedInt" />
+				</sequence>
+			</extention>
+		</complexContent>
+	</complexType>
+
+	<simpleType name="paperId">
+		<restriction base="ID">
+			<pattern value="\d{1,10}" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="price">
+		<restriction base="unsignedInt">
+			<minInclusive value="0" />
+			<maxInclusive value="1000" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="language">
+		<restriction base="string">
+			<enumeration value="Russian" />
+			<enumeration value="Belarusian" />
+			<enumeration value="English" />
+			<enumeration value="Polish" />
+			<enumeration value="Hebrew" />
+		</restriction>
+	</simpleType>
+
+	
+	<element name="paper" type="tns:paperType" abstract="true" />
+	
+	<element name="journal" type="tns:journalType" substitutionGroup="tns:paper" />
+
+	<element name="catalogue" type="tns:catalogueType" substitutionGroup="tns:paper" />
+</schema>

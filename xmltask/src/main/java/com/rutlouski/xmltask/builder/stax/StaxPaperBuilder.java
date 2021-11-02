@@ -22,6 +22,8 @@ import com.rutlouski.xmltask.exception.PaperException;
 public class StaxPaperBuilder extends AbstractPaperBuilder {
 	
 	private XMLInputFactory inputFactory;
+	private static final String WEBSITE = "website";
+	private static final String ID = "id";
 	
 	public StaxPaperBuilder() {
 		
@@ -67,10 +69,10 @@ public class StaxPaperBuilder extends AbstractPaperBuilder {
 		JournalType journal = new JournalType();
 		String name;
 
-		journal.setId(reader.getAttributeValue(null, "id"));
+		journal.setId(reader.getAttributeValue(null, ID));
 		
-		if (reader.getAttributeValue(null, "website") != null) {
-			journal.setWebsite(reader.getAttributeValue(null, "website"));
+		if (reader.getAttributeValue(null, WEBSITE) != null) {
+			journal.setWebsite(reader.getAttributeValue(null, WEBSITE));
 		}
 		
 		while (reader.hasNext()) {
@@ -114,10 +116,10 @@ public class StaxPaperBuilder extends AbstractPaperBuilder {
 		CatalogueType catalogue= new CatalogueType();
 		String name;
 		
-		catalogue.setId(reader.getAttributeValue(null, "id"));
+		catalogue.setId(reader.getAttributeValue(null, ID));
 		
-		if (reader.getAttributeValue(null, "website") != null) {
-			catalogue.setWebsite(reader.getAttributeValue(null, "website"));
+		if (reader.getAttributeValue(null, WEBSITE) != null) {
+			catalogue.setWebsite(reader.getAttributeValue(null, WEBSITE));
 		}
 		
 		while (reader.hasNext()) {

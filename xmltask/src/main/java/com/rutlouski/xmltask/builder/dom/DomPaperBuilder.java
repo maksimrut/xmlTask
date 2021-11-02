@@ -23,7 +23,10 @@ import com.rutlouski.xmltask.exception.PaperException;
 public class DomPaperBuilder extends AbstractPaperBuilder {
 	
 	private DocumentBuilder docBuilder;
-	public static final String DEFAULT_WEBSITE = "http://www.example.org";
+	private static final String DEFAULT_WEBSITE = "http://www.example.org";
+	private static final String WEBSITE = "website";
+	private static final String ID = "id";
+	private static final String EMPTY = "";
 
 	public DomPaperBuilder() throws PaperException {
 		
@@ -71,26 +74,26 @@ public class DomPaperBuilder extends AbstractPaperBuilder {
 		
 		if (paperElement.getTagName().equalsIgnoreCase(PaperEnum.JOURNAL.name())) {
 			JournalType journal = new JournalType();
-			journal.setPoints(Integer.parseInt(getElementTextContent(paperElement, "points")));
-			journal.setScopus(Boolean.parseBoolean(getElementTextContent(paperElement, "scopus")));
+			journal.setPoints(Integer.parseInt(getElementTextContent(paperElement, PaperEnum.POINTS.name().toLowerCase())));
+			journal.setScopus(Boolean.parseBoolean(getElementTextContent(paperElement, PaperEnum.SCOPUS.name().toLowerCase())));
 			paper = journal;
 		}
 		
 		if (paperElement.getTagName().equalsIgnoreCase(PaperEnum.CATALOGUE.name())) {
 			CatalogueType catalogue = new CatalogueType();
-			catalogue.setVolume(Integer.parseInt(getElementTextContent(paperElement, "volume")));
+			catalogue.setVolume(Integer.parseInt(getElementTextContent(paperElement, PaperEnum.VOLUME.name().toLowerCase())));
 			paper = catalogue;
 		}
 		
-		paper.setTitle(getElementTextContent(paperElement, "title"));
+		paper.setTitle(getElementTextContent(paperElement, PaperEnum.TITLE.name().toLowerCase()));
 		paper.setLanguage(PaperLanguage.valueOf(getElementTextContent(paperElement, "language").toUpperCase()));
-		paper.setDate(YearMonth.parse(getElementTextContent(paperElement, "date")));
-		paper.setColored(Boolean.parseBoolean(getElementTextContent(paperElement, "colored")));
-		paper.setPrice(Integer.parseInt(getElementTextContent(paperElement, "price")));
-		paper.setId(paperElement.getAttribute("id"));
+		paper.setDate(YearMonth.parse(getElementTextContent(paperElement, PaperEnum.DATE.name().toLowerCase())));
+		paper.setColored(Boolean.parseBoolean(getElementTextContent(paperElement, PaperEnum.COLORED.name().toLowerCase())));
+		paper.setPrice(Integer.parseInt(getElementTextContent(paperElement, PaperEnum.PRICE.name().toLowerCase())));
+		paper.setId(paperElement.getAttribute(ID));
 		
-		if (paperElement.getAttribute("website") != "") {
-			paper.setWebsite(paperElement.getAttribute("website"));
+		if (paperElement.getAttribute(WEBSITE) != EMPTY) {
+			paper.setWebsite(paperElement.getAttribute(WEBSITE));
 		} else paper.setWebsite(DEFAULT_WEBSITE);
 		return paper;
 	}
